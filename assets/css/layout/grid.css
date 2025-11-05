@@ -1,0 +1,38 @@
+/* CSS Grid system + .grid-12 (12 colunas) */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+
+/* Column helpers (col-span-1 .. col-span-12) */
+.col-span-1 { grid-column: span 1 / span 1; }
+.col-span-2 { grid-column: span 2 / span 2; }
+.col-span-3 { grid-column: span 3 / span 3; }
+.col-span-4 { grid-column: span 4 / span 4; }
+.col-span-6 { grid-column: span 6 / span 6; }
+.col-span-12 { grid-column: span 12 / span 12; }
+
+/* Responsive behavior: by default stack on small screens */
+@media (max-width: calc(var(--bp-sm) - 1px)) {
+  .grid-12 { grid-template-columns: 1fr; }
+  .col-span-1, .col-span-2, .col-span-3, .col-span-4, .col-span-6, .col-span-12 {
+    grid-column: auto;
+  }
+}
+
+/* At sm and up use 12 columns */
+@media (min-width: var(--bp-sm)) {
+  .grid-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
+
+/* Container utility to center grid content */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+}
+
+@media (min-width: var(--bp-md)) {
+  .grid-container { grid-template-columns: 1fr 320px; }
+}

@@ -1,0 +1,37 @@
+/* Global layout and typography */
+body {
+  font-family: var(--font-system);
+  color: var(--color-text);
+  background: linear-gradient(180deg, #fbfdfc, var(--color-bg));
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: var(--space-4);
+}
+
+:root { --content-max-width: var(--container-lg); }
+
+.container { max-width: var(--content-max-width); margin: 0 auto; padding: 0 var(--space-1); }
+
+h1,h2,h3,h4,h5,h6 { color: var(--color-neutral-800); margin: 0 0 var(--space-1-5) 0; line-height: 1.15; }
+h1 { font-size: var(--fs-xxl); letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+p { margin: 0 0 var(--space-1) 0; font-size: var(--fs-md); color: var(--color-muted); }
+
+/* Hero */
+.hero { padding: var(--space-2) 0; display:flex; align-items:center; gap: var(--space-2); }
+.hero .hero-text { max-width: 720px; }
+.hero .hero-figure img { border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+
+/* Links */
+a { color: var(--color-primary); transition: color var(--transition-fast), transform var(--transition-fast); }
+a:hover, a:focus { color: var(--color-primary-700); transform: translateY(-1px); }
+
+/* Form labels */
+label { display: inline-block; margin-bottom: 0.5rem; color: var(--color-muted); font-size: var(--fs-sm); }
+
+/* Utilities */
+.stack { display:flex; flex-direction:column; gap: var(--space-1); }
+.card-row { display:flex; gap: var(--space-1); flex-wrap:wrap; }
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Juntos Transformamos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Juntos Transformamos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos Sociais</a></li>
+                <li><a href="cadastro.html">Quero Participar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Faça Seu Cadastro</h2>
+        <p>Preencha o formulário abaixo para se tornar um voluntário ou apoiador. Campos marcados com * são obrigatórios.</p>
+
+        <form action="/processa-cadastro" method="POST">
+            
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <label for="nome">Nome Completo*:</label>
+                <input type="text" id="nome" name="nome" required minlength="5" placeholder="Seu nome completo">
+                
+                <br><br>
+
+                <label for="email">E-mail*:</label>
+                <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                
+                <br><br>
+
+                <label for="cpf">CPF*:</label>
+                <input type="text" id="cpf" name="cpf" required 
+                       pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" 
+                       title="Formato exigido: 999.999.999-99" 
+                       maxlength="14" 
+                       placeholder="999.999.999-99">
+                
+                <br><br>
+
+                <label for="telefone">Telefone*:</label>
+                <input type="tel" id="telefone" name="telefone" required 
+                       pattern="\([0-9]{2}\)\s?[0-9]{4,5}-?[0-9]{4}" 
+                       title="Formato exigido: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX" 
+                       placeholder="(99) 99999-9999">
+                
+                <br><br>
+
+                <label for="data-nasc">Data de Nascimento*:</label>
+                <input type="date" id="data-nasc" name="data-nasc" required>
+
+                <br><br>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço</legend>
+
+                <label for="cep">CEP*:</label>
+                <input type="text" id="cep" name="cep" required 
+                       pattern="[0-9]{5}-?[0-9]{3}" 
+                       title="Formato exigido: 99999-999" 
+                       maxlength="9" 
+                       placeholder="99999-999">
+                
+                <br><br>
+
+                <label for="endereco">Endereço (Rua, Número, Bairro)*:</label>
+                <input type="text" id="endereco" name="endereco" required placeholder="Rua, Número e Bairro">
+                
+                <br><br>
+                
+                <label for="cidade">Cidade*:</label>
+                <input type="text" id="cidade" name="cidade" required>
+                
+                <br><br>
+                
+                <label for="estado">Estado*:</label>
+                <select id="estado" name="estado" required>
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="PB">Paraíba</option>
+                </select>
+                
+                <br><br>
+
+            </fieldset>
+            
+            <button type="submit">Enviar Cadastro</button>
+            <button type="reset">Limpar Formulário</button>
+            
+        </form>
+        <section>
+            <h3>Junte-se ao nosso time!</h3>
+            <img src="assets/images/banner-voluntario.jpg" alt="Pessoas unidas em uma causa social." width="400">
+        </section>
+        
+    </main>
+
+    <footer>
+        <p><small>&copy; 2025 Juntos Transformamos.</small></p>
+    </footer>
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

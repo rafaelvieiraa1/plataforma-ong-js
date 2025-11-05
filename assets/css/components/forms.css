@@ -1,0 +1,49 @@
+/* Forms: inputs, fieldset, legend, validation */
+/* Forms: inputs, fieldset, legend, validation */
+:root { --form-radius: 10px; }
+
+/* Form layout helper */
+.form-grid { display:grid; gap: var(--space-1); grid-template-columns: 1fr; }
+@media (min-width: var(--bp-sm)) { .form-grid.two-col { grid-template-columns: 1fr 1fr; gap: var(--space-1); } }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea, select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--form-radius);
+  background: #fff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  font-size: var(--fs-md);
+}
+
+input::placeholder, textarea::placeholder { color: #9e9e9e; }
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(0,121,107,0.06);
+  transform: translateY(-1px);
+}
+
+/* Fieldset / Legend */
+fieldset { border: 1px solid var(--color-neutral-200); padding: calc(var(--space-1) - 0.25rem); border-radius: calc(var(--form-radius) + 2px); margin-bottom: var(--space-1); background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4)); }
+legend { padding: 0 0.5rem; font-weight:700; font-size: var(--fs-sm); color: var(--color-neutral-800); }
+
+/* Validation visual using :valid / :invalid */
+input:required:invalid, textarea:required:invalid { border-color: var(--color-error); }
+input:required:invalid:focus, textarea:required:invalid:focus { box-shadow: 0 8px 20px rgba(198,40,40,0.06); }
+input:required:valid, textarea:required:valid { border-color: var(--color-success); }
+
+/* Small helper for error text */
+.field-error { color: var(--color-error); font-size: 0.85rem; margin-top: 0.25rem; display:block; }
+
+/* Inline field helpers */
+.field-row { display:flex; gap: 0.5rem; align-items:center; }
+.field-inline { display:flex; gap: 0.5rem; align-items:center; }
+
+/* Disabled */
+input[disabled], textarea[disabled], select[disabled] { background: var(--color-neutral-100); color: var(--color-muted); }
+
+/* Small submit area */
+.form-actions { display:flex; gap: var(--space-1); justify-content:flex-end; margin-top: var(--space-1); }
+

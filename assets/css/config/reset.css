@@ -1,0 +1,14 @@
+/* Minimal reset and sensible defaults */
+/* Based on modern reset patterns */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html, body { margin: 0; padding: 0; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+button { background: none; border: none; padding: 0; }
+ul[role='list'], ol[role='list'] { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit; }
+input, button, textarea, select { font: inherit; }
+/* Reduce animations for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

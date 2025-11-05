@@ -1,0 +1,43 @@
+/* Header / Navigation styles (responsive, hamburger, dropdown) */
+.site-header {
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid var(--color-neutral-300);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.site-header .container { display:flex; align-items:center; justify-content:space-between; gap: var(--space-1); padding: calc(var(--space-0-5) + 0.25rem); }
+
+.brand { display:flex; align-items:center; gap: 0.5rem; }
+.brand img { height: 44px; width: auto; display:block; }
+.brand .site-title { font-weight:700; font-size: var(--fs-lg); color: var(--color-primary); }
+
+.nav { display: flex; gap: var(--space-1); align-items:center; }
+.nav ul { display:flex; gap: calc(var(--space-1) / 2); align-items:center; }
+.nav li { position: relative; }
+.nav a { padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); color: var(--color-neutral-800); font-weight:600; }
+.nav a:hover { background: var(--color-neutral-100); transform: translateY(-1px); }
+
+/* Dropdown submenu visible on hover (desktop) */
+.nav li .submenu { display:none; position:absolute; top:calc(100% + 6px); left:0; background:#fff; border:1px solid var(--color-neutral-300); box-shadow: var(--shadow-sm); border-radius: var(--radius-sm); min-width: 200px; padding: 0.5rem; }
+.nav li:hover .submenu { display:block; }
+.submenu a { display:block; padding: 0.45rem 0.5rem; color: var(--color-text); border-radius: 4px; }
+
+/* Hamburger menu - mobile */
+.nav-toggle { position:absolute; left:-9999px; }
+.nav-hamburger { display:none; }
+
+/* hamburger appearance */
+.nav-hamburger { display:inline-flex; align-items:center; justify-content:center; width:44px; height:36px; border-radius:6px; background: transparent; cursor:pointer; font-size:1.15rem; }
+.nav-hamburger:focus { outline: none; box-shadow: 0 0 0 4px rgba(0,121,107,0.06); }
+
+@media (max-width: calc(var(--bp-sm) - 1px)) {
+  .nav ul { display: none; flex-direction: column; gap: 0; }
+  .nav-hamburger { display:flex; }
+  /* Simple checkbox hack for mobile open */
+  .nav-toggle:checked + .nav ul { display:flex; background: #fff; position: absolute; left: 0; right: 0; top: 64px; padding: var(--space-1); border-top: 1px solid var(--color-neutral-300); box-shadow: var(--shadow-sm); }
+  .nav li .submenu { position: static; display: none; }
+  .nav li:active .submenu, .nav li:focus-within .submenu { display:block; }
+}
